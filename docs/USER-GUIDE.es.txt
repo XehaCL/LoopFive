@@ -1,0 +1,40 @@
+LOOP / FIVE 2.8 — PANEL HARDWARE Y FUENTES DE GRABACIÓN
+
+Abre LoopFive-2.8.exe.
+
+PANEL PRINCIPAL
+Distribución inspirada en la referencia: INPUT LEVEL a la izquierda, pantalla azul central con memoria/nombre, OUTPUT LEVEL a la derecha.
+Input FX A–D a la izquierda y Track FX A–D a la derecha. Selección de grupo, letra y tipo de efecto en el centro.
+Cuatro mandos debajo de la pantalla controlan parámetros del efecto seleccionado. Sus nombres se adaptan al tipo de efecto; … y EDITAR abren todos los parámetros detallados.
+Los mandos admiten arrastre vertical, rueda y flechas al tener foco.
+ALL START / STOP controla las pistas globalmente. UNDO / REDO deshace la pista seleccionada; clic derecho rehace.
+RHYTHM START / STOP conmuta el ritmo; clic derecho abre sus ajustes. TAP ajusta tempo y MASTER graba la mezcla final.
+MENU muestra archivos/memorias y los ajustes rápidos adicionales. LOOP vuelve a las pistas. Opciones continúa arriba a la derecha, con temas e idioma.
+
+CANALES
+Cada canal tiene FX, TRACK, parada circular, fader lateral y anillo REC / PLAY / OVERDUB.
+TRACK abre ajustes e importación/exportación WAV. El botón de flecha deshace; M y S conservan mute y solo.
+El selector central y los botones de efectos actúan sobre las mismas configuraciones guardadas.
+
+GRABAR UNA PISTA EN OTRA
+1. Inicia la reproducción de la pista fuente, por ejemplo la 1.
+2. En la pista destino, por ejemplo la 2, pulsa FUENTE y elige Pista 1.
+3. Pulsa el anillo REC de la pista 2. La pista 1 continúa reproduciéndose mientras se captura en la 2.
+4. Vuelve a pulsar el anillo para cerrar la toma y reproducirla.
+También puedes elegir Fuente de grabación en TRACK.
+Opciones: micrófono, otra pista, mezcla de las otras pistas, o micrófono + mezcla.
+La fuente no puede ser la misma pista destino. La selección queda guardada con la sesión/memoria.
+Esta captura usa el audio de las pistas antes de Track FX y del máster, siguiendo sus faders, mute y solo. No imprime los efectos globales de reproducción; los Input FX ya grabados dentro del clip sí forman parte de ese audio.
+Para grabar la mezcla final incluyendo Track FX, EQ/reverb máster y ritmo, usa MASTER.
+El modo Bounce configurado manualmente en sesiones anteriores mantiene su comportamiento anterior.
+
+VERIFICACIÓN
+Pruebas de motor, audio, efectos, teclado, idiomas, temas, navegación, panel central y grabación entre pistas.
+La reconstrucción del panel no cambia los algoritmos de efectos de la versión 2.7.
+
+ENGLISH
+Hardware-style layout with central screen, effect type selector and four parameter rotaries.
+INPUT LEVEL left, OUTPUT LEVEL right, Input FX / Track FX banks at each side, FX / TRACK / STOP and fader per channel.
+SOURCE chooses microphone, another track, other-track mix or microphone + mix.
+Play the source track, select it on the destination, then press the destination's REC ring.
+Track capture is pre-Track-FX and pre-master, follows source faders/mute/solo, and does not feed the destination into itself. MASTER records the complete final mix with playback effects.

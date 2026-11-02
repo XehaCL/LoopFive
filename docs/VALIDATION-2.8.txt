@@ -1,0 +1,531 @@
+Application build verified (local path omitted).
+PASS record/play transition and exact frame count
+PASS captured samples (0,2 / 0,2)
+PASS overdub writes at rendered position (0,3 / 0,3)
+PASS overdub leaves following frame untouched (0,2 / 0,2)
+PASS undo restores take (0,2 / 0,2)
+PASS undo preserves live playback phase
+PASS redo restores overdub (0,3 / 0,3)
+PASS mark back after clear
+PASS one-shot automatically stops
+PASS reverse reads last sample (0,2 / 0,2)
+PASS reverse prevents overdub
+PASS queued quantized recording
+PASS waits until exact bar
+PASS starts on bar boundary
+PASS fixed measure automatically closes exact loop
+PASS auto record waits below threshold
+PASS auto record starts at threshold sample
+PASS single play stops previous track
+PASS stop at loop end scheduled
+PASS stop at loop end executes
+PASS pan right removes left (0 / 0)
+PASS pan right keeps right (0,1 / 0,1)
+PASS mute (0 / 0)
+PASS bounce records other track (0,0007123732 / 0,0007123732)
+PASS session metadata roundtrip
+PASS session samples roundtrip (0,03083394 / 0,03083394)
+PASS atomic replacement keeps backup
+PASS float WAV roundtrip (0,0007123732 / 0,0007123732)
+PASS PCM WAV roundtrip
+PASS corrupt session rejected
+PASS MIDI CC triggers recording
+PASS MIDI CC edge does not retrigger
+PASS MIDI learn captures channel/CC
+PASS MIDI note on drives synth
+PASS MIDI note off releases synth
+PASS effect family catalog counts
+PASS all 53 DSP paths generate finite, non-silent, non-passthrough audio (1001 ms)
+PASS offline mix exact bar duration
+PASS master recording finalizes WAV header
+PASS real native audio input/output renders
+PASS audio device restart
+PASS five tracks + eight FX + rhythm faster than real time (10 s in 717 ms)
+TOTAL 42 checks passed
+PASS REPLACE 1 replaces previous audio
+PASS REPLACE 2 mutes replaced track while recording
+PASS fade-in starts quietly
+PASS fade-out completes and stops
+PASS REC DUB PLAY alternative order
+PASS count-in adds a full bar before recording
+PASS queued recording can be cancelled
+PASS count-in does not delay playback
+PASS single change waits for previous loop end
+PASS single change executes on loop boundary
+PASS loop-length synchronization uses four-bar boundary
+PASS tempo sync changes playback rate
+PASS half speed combines with tempo sync
+PASS output limiter caps peaks
+PASS master compressor reduces sustained peaks
+PASS single FX mode enables one slot
+PASS momentary FX releases
+PASS MIDI assignment scales continuous range
+PASS momentary MIDI FX on
+PASS momentary MIDI FX off
+PASS 24-bit mono / 48 kHz import resamples and handles padding
+PASS MIDI drum import supports running status and quantizes bar
+INFO unique base rhythm grids: 210 / 210
+PASS rhythm library contains varied step patterns
+PASS rhythm variation applies on bar boundary
+PASS rhythm ending stops after one bar
+PASS undo history bounded
+PASS playback works without a microphone
+PASS one-minute continuous looping remains valid (1586 ms offline)
+PASS fractional beat recording closes automatically
+PASS deferred speed stays unchanged within loop
+PASS deferred speed switches on wrap
+PASS first free take infers tempo
+PASS count-in produces audible clicks with rhythm disabled
+PASS built-in demo has five synchronized audio tracks
+PASS demo renders a four-bar mix
+TOTAL 35 extended checks passed
+PASS track circle starts recording
+PASS track stop button connected
+PASS FX button activates correct slot
+PASS FX mouse release ends momentary effect
+PASS loaded rhythm controls reflect saved values
+PASS FX editor edits selected bank/section
+PASS session load refreshes header controls
+PASS track controls remain connected after session replacement
+TOTAL 8 UI interaction checks passed
+PASS custom Q controls track 1 circle
+PASS held key never retriggers record on auto-repeat
+PASS replaced default key no longer triggers action
+PASS Ctrl Shift J controls track 5
+PASS modifier combinations are matched exactly
+PASS hold FX turns on
+PASS release affects original FX even after bank change
+PASS focus loss releases held FX
+PASS hold restores previously active FX state
+PASS normal toggle binding respects momentary slot configuration
+PASS keyboard can be disabled
+PASS selected track volume shortcut adjusts correct fader
+PASS dedicated PLAY command
+PASS dedicated OVERDUB command
+PASS dedicated STOP command
+PASS every catalog action has an executable handler (495 actions)
+PASS Windows reserved shortcuts are rejected
+PASS Space and Esc can be assigned
+PASS invalid modifier bits rejected
+PASS duplicate-key profiles rejected
+PASS old settings migrate with default keyboard enabled
+PASS disabled keyboard survives settings serialization
+PASS new sessions default to immediate recording
+PASS direct recording option removes every musical waiting condition
+PASS audio captured before key press is excluded
+PASS old buffered samples skipped without inserting silence
+PASS overdub records fresh audio without waiting for screen
+PASS overdub remains continuous after screen acknowledgement
+PASS native capture position provides a valid recording boundary
+PASS native input is captured even before GUI repaint
+PASS native fresh audio flows after visible cue boundary
+PASS UI assignments persist to settings file
+PASS UI prevents conflict without replacement decision
+PASS conflict replacement moves key without duplicate mappings
+PASS keyboard profile export/import roundtrip
+PASS Options Keyboard page reachable
+PASS window message filter routes custom key to track 2
+PASS recording cue is painted and acknowledged immediately on key press
+PASS typing in text fields never triggers performance shortcuts
+PASS key capture dialog recognizes modifier chord
+TOTAL 40 keyboard and recording regression checks passed
+PASS partial capture waits without fabricating zeros or consuming input
+PASS capture ring wraps with exact stereo values and monotonic frame ids
+PASS capture overflow is reported rather than silently truncating input
+PASS recorded take has exact requested capture duration despite packet jitter
+PASS recorded stereo samples are bit-exact to decoded 16-bit source
+PASS quiet details are retained without noise-gate chopping
+PASS audio capture is independent of GUI paint acknowledgement
+PASS exported recording preserves source samples
+PASS clean playback matches recorded signal without audible processing error
+PASS automatic overdub offset writes at the earlier audible loop position
+PASS overdub offset remains fixed during take to avoid jitter and sample jumps
+PASS optional noise gate attenuates smoothly instead of hard-cutting quiet audio
+PASS clean recording preset bypasses FX, gating and pitch-changing speed
+PASS real Windows capture drains the final block and preserves exact start/stop frame interval
+PASS real device capture/render remains continuous without output starvation during smoke test
+TOTAL 15 audio fidelity checks passed; maximum capture sample error = 0
+PASS bypass preserves exact stereo samples
+PASS air rumble attenuated while voice band retained
+PASS high frequency hiss filtering
+PASS background reduced smoothly with linked stereo
+PASS fast opening retains wanted sounds
+PASS disable restores original signal immediately
+6 cleanup checks passed
+PASS theme applies Carbon · original
+PASS appearance preserves audio and transport
+PASS theme applies Aurora · violeta
+PASS appearance preserves audio and transport
+PASS theme applies Ocean · azul
+PASS appearance preserves audio and transport
+PASS theme applies Ember · cobre
+PASS appearance preserves audio and transport
+PASS theme applies Studio · claro
+PASS appearance preserves audio and transport
+PASS theme applies Inferno · fuego
+PASS appearance preserves audio and transport
+PASS custom accent applies
+PASS appearance settings serialize
+PASS reduced motion applies
+PASS ring fits 1100
+PASS ring fits 1100
+PASS ring fits 1100
+PASS ring fits 1100
+PASS ring fits 1100
+PASS ring fits 1280
+PASS ring fits 1280
+PASS ring fits 1280
+PASS ring fits 1280
+PASS ring fits 1280
+PASS ring fits 1600
+PASS ring fits 1600
+PASS ring fits 1600
+PASS ring fits 1600
+PASS ring fits 1600
+PASS scene renders five usable pads
+PASS scene ring starts real recording
+PASS reference palette is available
+TOTAL 33 theme checks passed
+PASS reverb tail is diffuse rather than sparse isolated echoes
+PASS mono input produces decorrelated stereo reverb
+PASS reverb size controls measurable decay duration
+PASS reverb tail decays without runaway feedback
+PASS cubic delay interpolation reduces sine reconstruction error over linear
+Interpolation errors: cubic=0,000301262363830601 linear=0,0115444308577201
+Aliased third / fundamental: improved=0,137080412835344 naive=0,325400972259011
+PASS antiderivative saturation reduces measured aliased harmonic relative to naive tanh
+PASS wet/dry control change ramps instead of an instantaneous full-scale jump
+PASS three-voice chorus creates a stereo image from mono
+TOTAL 8 effect quality checks passed
+PASS exactly Spanish and English are offered
+PASS language selector applies English immediately
+PASS selected language persists on disk
+PASS live status remains English on every refresh
+PASS navigation translated
+PASS header and settings translated
+PASS user session title is preserved
+PASS language does not mutate audio or shortcut IDs
+PASS dynamic track and bank captions translated
+PASS keyboard action descriptions translated without changing IDs
+PASS default track title translated in painted UI 0
+PASS default track title translated in painted UI 1
+PASS default track title translated in painted UI 2
+PASS default track title translated in painted UI 3
+PASS default track title translated in painted UI 4
+PASS custom track title is never translated
+PASS default session title translated without mutating saved name
+PASS default track title also translated in editor
+PASS recording state translated
+PASS help content translated
+PASS track dialog translated
+PASS keyboard editor headers translated
+PASS switching back restores Spanish
+PASS default names restore when returning to Spanish
+PASS Spanish source strings remain unchanged
+TOTAL 25 language checks passed
+PASS performance tabs contain no settings or Inferno tabs
+PASS Options remains at top right at width 1100
+PASS session controls do not overlap Options at width 1100
+PASS Options remains at top right at width 1280
+PASS session controls do not overlap Options at width 1280
+PASS top-right button opens Interface workspace
+PASS themes are inside Options
+PASS Interface shortcut opens Themes and language
+PASS scene view selection is saved
+PASS Inferno uses the original loop page
+PASS track controls return to the exact same location
+PASS opening Options leaves recording continuous
+PASS keyboard settings shortcut opens relocated editor
+PASS help shortcut reaches relocated help page
+TOTAL 14 navigation checks passed
+PASS direct edit routes section 0 bank 0 slot 0
+PASS editing does not toggle effect 0/0/0
+PASS type change affects only chosen slot 0/0/0
+PASS direct edit routes section 0 bank 0 slot 1
+PASS editing does not toggle effect 0/0/1
+PASS type change affects only chosen slot 0/0/1
+PASS direct edit routes section 0 bank 0 slot 2
+PASS editing does not toggle effect 0/0/2
+PASS type change affects only chosen slot 0/0/2
+PASS direct edit routes section 0 bank 0 slot 3
+PASS editing does not toggle effect 0/0/3
+PASS type change affects only chosen slot 0/0/3
+PASS direct edit routes section 0 bank 1 slot 0
+PASS editing does not toggle effect 0/1/0
+PASS type change affects only chosen slot 0/1/0
+PASS direct edit routes section 0 bank 1 slot 1
+PASS editing does not toggle effect 0/1/1
+PASS type change affects only chosen slot 0/1/1
+PASS direct edit routes section 0 bank 1 slot 2
+PASS editing does not toggle effect 0/1/2
+PASS type change affects only chosen slot 0/1/2
+PASS direct edit routes section 0 bank 1 slot 3
+PASS editing does not toggle effect 0/1/3
+PASS type change affects only chosen slot 0/1/3
+PASS direct edit routes section 0 bank 2 slot 0
+PASS editing does not toggle effect 0/2/0
+PASS type change affects only chosen slot 0/2/0
+PASS direct edit routes section 0 bank 2 slot 1
+PASS editing does not toggle effect 0/2/1
+PASS type change affects only chosen slot 0/2/1
+PASS direct edit routes section 0 bank 2 slot 2
+PASS editing does not toggle effect 0/2/2
+PASS type change affects only chosen slot 0/2/2
+PASS direct edit routes section 0 bank 2 slot 3
+PASS editing does not toggle effect 0/2/3
+PASS type change affects only chosen slot 0/2/3
+PASS direct edit routes section 0 bank 3 slot 0
+PASS editing does not toggle effect 0/3/0
+PASS type change affects only chosen slot 0/3/0
+PASS direct edit routes section 0 bank 3 slot 1
+PASS editing does not toggle effect 0/3/1
+PASS type change affects only chosen slot 0/3/1
+PASS direct edit routes section 0 bank 3 slot 2
+PASS editing does not toggle effect 0/3/2
+PASS type change affects only chosen slot 0/3/2
+PASS direct edit routes section 0 bank 3 slot 3
+PASS editing does not toggle effect 0/3/3
+PASS type change affects only chosen slot 0/3/3
+PASS shared Edit remembers selected C for section 0
+PASS right-click D edits without changing momentary state for section 0
+PASS direct edit routes section 1 bank 0 slot 0
+PASS editing does not toggle effect 1/0/0
+PASS type change affects only chosen slot 1/0/0
+PASS direct edit routes section 1 bank 0 slot 1
+PASS editing does not toggle effect 1/0/1
+PASS type change affects only chosen slot 1/0/1
+PASS direct edit routes section 1 bank 0 slot 2
+PASS editing does not toggle effect 1/0/2
+PASS type change affects only chosen slot 1/0/2
+PASS direct edit routes section 1 bank 0 slot 3
+PASS editing does not toggle effect 1/0/3
+PASS type change affects only chosen slot 1/0/3
+PASS direct edit routes section 1 bank 1 slot 0
+PASS editing does not toggle effect 1/1/0
+PASS type change affects only chosen slot 1/1/0
+PASS direct edit routes section 1 bank 1 slot 1
+PASS editing does not toggle effect 1/1/1
+PASS type change affects only chosen slot 1/1/1
+PASS direct edit routes section 1 bank 1 slot 2
+PASS editing does not toggle effect 1/1/2
+PASS type change affects only chosen slot 1/1/2
+PASS direct edit routes section 1 bank 1 slot 3
+PASS editing does not toggle effect 1/1/3
+PASS type change affects only chosen slot 1/1/3
+PASS direct edit routes section 1 bank 2 slot 0
+PASS editing does not toggle effect 1/2/0
+PASS type change affects only chosen slot 1/2/0
+PASS direct edit routes section 1 bank 2 slot 1
+PASS editing does not toggle effect 1/2/1
+PASS type change affects only chosen slot 1/2/1
+PASS direct edit routes section 1 bank 2 slot 2
+PASS editing does not toggle effect 1/2/2
+PASS type change affects only chosen slot 1/2/2
+PASS direct edit routes section 1 bank 2 slot 3
+PASS editing does not toggle effect 1/2/3
+PASS type change affects only chosen slot 1/2/3
+PASS direct edit routes section 1 bank 3 slot 0
+PASS editing does not toggle effect 1/3/0
+PASS type change affects only chosen slot 1/3/0
+PASS direct edit routes section 1 bank 3 slot 1
+PASS editing does not toggle effect 1/3/1
+PASS type change affects only chosen slot 1/3/1
+PASS direct edit routes section 1 bank 3 slot 2
+PASS editing does not toggle effect 1/3/2
+PASS type change affects only chosen slot 1/3/2
+PASS direct edit routes section 1 bank 3 slot 3
+PASS editing does not toggle effect 1/3/3
+PASS type change affects only chosen slot 1/3/3
+PASS shared Edit remembers selected C for section 1
+PASS right-click D edits without changing momentary state for section 1
+TOTAL 100 effect editing checks passed
+PASS LO-FI bit depth produces a bounded number of quantization levels
+PASS LO-FI sample-rate reduction holds exactly the configured interval
+PASS delay uses the requested millisecond time without early echoes
+PASS long tempo-synced delay uses 3 seconds instead of silently clipping at the old buffer limit
+PASS four-region EQ at zero dB reconstructs input without coloration
+PASS FREEZE sustains the captured texture after the live input stops
+PASS FREEZE release fades its tail instead of an immediate hard cut
+PASS detailed level sequence follows musical step boundaries
+PASS VOCODER uses a playing carrier track even when its fader is at zero
+PASS empty VOCODER carrier produces silence at 100 percent wet
+PASS separate slot inserts affect only their selected tracks and leave the third dry
+PASS detailed parameters and slot routing survive serialization
+PASS older effect settings keep legacy processing mode
+PASS detailed effect renders finite audible output: LPF
+PASS detailed effect renders finite audible output: BPF
+PASS detailed effect renders finite audible output: HPF
+PASS detailed effect renders finite audible output: PHASER
+PASS detailed effect renders finite audible output: FLANGER
+PASS detailed effect renders finite audible output: SYNTH
+PASS detailed effect renders finite audible output: LO-FI
+PASS detailed effect renders finite audible output: RADIO
+PASS detailed effect renders finite audible output: RING.MOD
+PASS detailed effect renders finite audible output: G2B
+PASS detailed effect renders finite audible output: SUSTAINER
+PASS detailed effect renders finite audible output: AUTO RIFF
+PASS detailed effect renders finite audible output: SLOW GEAR
+PASS detailed effect renders finite audible output: TRANSPOSE
+PASS detailed effect renders finite audible output: PITCH BEND
+PASS detailed effect renders finite audible output: ROBOT
+PASS detailed effect renders finite audible output: ELECTRIC
+PASS detailed effect renders finite audible output: HRM MANUAL
+PASS detailed effect renders finite audible output: HRM AUTO (M)
+PASS detailed effect renders finite audible output: VOCODER
+PASS detailed effect renders finite audible output: OSC VOC (M)
+PASS detailed effect renders finite audible output: OSC BOT
+PASS detailed effect renders finite audible output: PREAMP
+PASS detailed effect renders finite audible output: DIST
+PASS detailed effect renders finite audible output: DYNAMICS
+PASS detailed effect renders finite audible output: EQ
+PASS detailed effect renders finite audible output: ISOLATOR
+PASS detailed effect renders finite audible output: OCTAVE
+PASS detailed effect renders finite audible output: AUTO PAN
+PASS detailed effect renders finite audible output: MANUAL PAN
+PASS detailed effect renders finite audible output: STEREO ENHANCE
+PASS detailed effect renders finite audible output: TREMOLO
+PASS detailed effect renders finite audible output: VIBRATO
+PASS detailed effect renders finite audible output: PATTERN SLICER
+PASS detailed effect renders finite audible output: STEP SLICER
+PASS detailed effect renders finite audible output: DELAY
+PASS detailed effect renders finite audible output: PANNING DELAY
+PASS detailed effect renders finite audible output: REVERSE DELAY
+PASS detailed effect renders finite audible output: MOD DELAY
+PASS detailed effect renders finite audible output: TAPE ECHO
+PASS detailed effect renders finite audible output: GRANULAR DELAY
+PASS detailed effect renders finite audible output: WARP
+PASS detailed effect renders finite audible output: TWIST
+PASS detailed effect renders finite audible output: ROLL
+PASS detailed effect renders finite audible output: FREEZE
+PASS detailed effect renders finite audible output: CHORUS
+PASS detailed effect renders finite audible output: REVERB
+PASS detailed effect renders finite audible output: GATE REVERB
+PASS detailed effect renders finite audible output: REVERSE REVERB
+PASS detailed effect renders finite audible output: BEAT SCATTER
+PASS detailed effect renders finite audible output: BEAT REPEAT
+PASS detailed effect renders finite audible output: BEAT SHIFT
+PASS detailed effect renders finite audible output: VINYL FLICK
+All detailed effect renders: 551 ms
+TOTAL 66 research DSP checks passed
+PASS all 53 effect families have bilingual guidance and implementation notes
+PASS effect source and notes present: LPF
+PASS effect source and notes present: BPF
+PASS effect source and notes present: HPF
+PASS effect source and notes present: PHASER
+PASS effect source and notes present: FLANGER
+PASS effect source and notes present: SYNTH
+PASS effect source and notes present: LO-FI
+PASS effect source and notes present: RADIO
+PASS effect source and notes present: RING.MOD
+PASS effect source and notes present: G2B
+PASS effect source and notes present: SUSTAINER
+PASS effect source and notes present: AUTO RIFF
+PASS effect source and notes present: SLOW GEAR
+PASS effect source and notes present: TRANSPOSE
+PASS effect source and notes present: PITCH BEND
+PASS effect source and notes present: ROBOT
+PASS effect source and notes present: ELECTRIC
+PASS effect source and notes present: HRM MANUAL
+PASS effect source and notes present: HRM AUTO (M)
+PASS effect source and notes present: VOCODER
+PASS effect source and notes present: OSC VOC (M)
+PASS effect source and notes present: OSC BOT
+PASS effect source and notes present: PREAMP
+PASS effect source and notes present: DIST
+PASS effect source and notes present: DYNAMICS
+PASS effect source and notes present: EQ
+PASS effect source and notes present: ISOLATOR
+PASS effect source and notes present: OCTAVE
+PASS effect source and notes present: AUTO PAN
+PASS effect source and notes present: MANUAL PAN
+PASS effect source and notes present: STEREO ENHANCE
+PASS effect source and notes present: TREMOLO
+PASS effect source and notes present: VIBRATO
+PASS effect source and notes present: PATTERN SLICER
+PASS effect source and notes present: STEP SLICER
+PASS effect source and notes present: DELAY
+PASS effect source and notes present: PANNING DELAY
+PASS effect source and notes present: REVERSE DELAY
+PASS effect source and notes present: MOD DELAY
+PASS effect source and notes present: TAPE ECHO
+PASS effect source and notes present: GRANULAR DELAY
+PASS effect source and notes present: WARP
+PASS effect source and notes present: TWIST
+PASS effect source and notes present: ROLL
+PASS effect source and notes present: FREEZE
+PASS effect source and notes present: CHORUS
+PASS effect source and notes present: REVERB
+PASS effect source and notes present: GATE REVERB
+PASS effect source and notes present: REVERSE REVERB
+PASS effect source and notes present: BEAT SCATTER
+PASS effect source and notes present: BEAT REPEAT
+PASS effect source and notes present: BEAT SHIFT
+PASS effect source and notes present: VINYL FLICK
+PASS selecting a new type enables its detailed controls
+PASS LO-FI controls update independent bit and sampling settings
+PASS editing B leaves A unchanged
+PASS VOCODER carrier selector chooses track 4
+PASS legacy mode retains advanced settings for a reversible switch
+PASS re-enabling detailed mode restores carrier selection
+PASS triplet selector enables sync and the correct beat fraction
+PASS per-slot target control assigns only track 5
+PASS new controls and guide descriptions switch to English
+TOTAL 63 research UI checks passed
+PASS central selector edits section 0 bank 0 slot 0
+PASS central selector edits section 0 bank 0 slot 1
+PASS central selector edits section 0 bank 0 slot 2
+PASS central selector edits section 0 bank 0 slot 3
+PASS central selector edits section 0 bank 1 slot 0
+PASS central selector edits section 0 bank 1 slot 1
+PASS central selector edits section 0 bank 1 slot 2
+PASS central selector edits section 0 bank 1 slot 3
+PASS central selector edits section 0 bank 2 slot 0
+PASS central selector edits section 0 bank 2 slot 1
+PASS central selector edits section 0 bank 2 slot 2
+PASS central selector edits section 0 bank 2 slot 3
+PASS central selector edits section 0 bank 3 slot 0
+PASS central selector edits section 0 bank 3 slot 1
+PASS central selector edits section 0 bank 3 slot 2
+PASS central selector edits section 0 bank 3 slot 3
+PASS central selector edits section 1 bank 0 slot 0
+PASS central selector edits section 1 bank 0 slot 1
+PASS central selector edits section 1 bank 0 slot 2
+PASS central selector edits section 1 bank 0 slot 3
+PASS central selector edits section 1 bank 1 slot 0
+PASS central selector edits section 1 bank 1 slot 1
+PASS central selector edits section 1 bank 1 slot 2
+PASS central selector edits section 1 bank 1 slot 3
+PASS central selector edits section 1 bank 2 slot 0
+PASS central selector edits section 1 bank 2 slot 1
+PASS central selector edits section 1 bank 2 slot 2
+PASS central selector edits section 1 bank 2 slot 3
+PASS central selector edits section 1 bank 3 slot 0
+PASS central selector edits section 1 bank 3 slot 1
+PASS central selector edits section 1 bank 3 slot 2
+PASS central selector edits section 1 bank 3 slot 3
+PASS LCD is centered over the effect selector
+PASS effect type selector is below the center screen
+PASS input rotary controls actual recording gain
+PASS output rotary controls actual master level
+PASS channel has FX / TRACK / STOP on the left and fader on the right
+PASS channel has FX / TRACK / STOP on the left and fader on the right
+PASS channel has FX / TRACK / STOP on the left and fader on the right
+PASS channel has FX / TRACK / STOP on the left and fader on the right
+PASS channel has FX / TRACK / STOP on the left and fader on the right
+PASS track editor exposes the recording source selector
+PASS source dropdown routes track 3 into track 2
+PASS source dropdown restores microphone input
+PASS returning from Menu restores loop geometry
+PASS top-right Options remains available
+TOTAL 46 hardware UI checks passed
+PASS track 2 records playing track 1 while ignoring microphone input
+PASS source track keeps playing during capture
+PASS new audible-source mode respects source mute
+PASS source recording follows the source fader level
+PASS stopped source produces no copied audio
+PASS mix mode captures the other tracks and excludes destination and microphone
+PASS microphone plus track mix combines both sources
+PASS microphone mode restores direct input without bounce
+PASS a track cannot select itself as recording source
+PASS recording source settings survive session serialization
+TOTAL 10 recording-source checks passed

@@ -1,0 +1,16 @@
+using System;using System.IO;using System.Collections.Generic;
+namespace LoopFive {
+ public class MidiPattern {
+  public byte[] Steps=new byte[16];public int Numerator=4,Denominator=4;public float Bpm=120;public int NotesImported;
+  class Hit {public long Tick;public int Instrument;}
+  static int Read16(BinaryReader r){return r.ReadByte()<<8|r.ReadByte();}
+  static int Read32(BinaryReader r){uint n=(uint)(r.ReadByte()<<24|r.ReadByte()<<16|r.ReadByte()<<8|r.ReadByte());if(n>int.MaxValue)throw new InvalidDataException("Bloque MIDI demasiado grande.");return (int)n;}
+  static long VLQ(BinaryReader r){long n=0;for(int i=0;i<4;i++){byte b=r.ReadByte();n=(n<<7)|(uint)(b&127);if((b&128)==0)return n;}throw new InvalidDataException("Número MIDI inválido.");}
+  public static MidiPattern Read(string path){MidiPattern result=new MidiPattern();List<Hit> hits=new List<Hit>();using(BinaryReader r=new BinaryReader(File.OpenRead(path))){if(new string(r.ReadChars(4))!="MThd")throw new InvalidDataException("Se requiere un archivo MIDI estándar.");int header=Read32(r);if(header<6)throw new InvalidDataException("Cabecera MIDI incompleta.");int format=Read16(r),tracks=Read16(r),division=Read16(r);if(format>1||(division&0x8000)!=0||division==0||tracks>128)throw new InvalidDataException("Usa MIDI de tipo 0/1 y división en ticks por pulso.");r.BaseStream.Position+=header-6;for(int t=0;t<tracks;t++){if(new string(r.ReadChars(4))!="MTrk")throw new InvalidDataException("Pista MIDI inválida.");int len=Read32(r);long end=r.BaseStream.Position+len;if(end>r.BaseStream.Length||len>10000000)throw new InvalidDataException("MIDI truncado o demasiado grande.");long tick=0;int running=0;while(r.BaseStream.Position<end){tick+=VLQ(r);int status=r.ReadByte();int first=-1;if(status<128){first=status;status=running;}else if(status<240)running=status;if(status==255){int type=r.ReadByte();long count=VLQ(r);if(count>end-r.BaseStream.Position)throw new InvalidDataException("Metaevento MIDI truncado.");byte[] data=r.ReadBytes((int)count);if(type==81&&count==3&&tick==0){int micros=data[0]<<16|data[1]<<8|data[2];if(micros>0)result.Bpm=MathX.Clamp(60000000f/micros,20,300);}if(type==88&&count>=2&&tick==0){result.Numerator=Math.Max(2,Math.Min(15,(int)data[0]));result.Denominator=data[1]==3?8:4;}continue;}
+    if(status==240||status==247){long size=VLQ(r);if(size>end-r.BaseStream.Position)throw new InvalidDataException("SysEx truncado.");r.BaseStream.Position+=size;running=0;continue;}int kind=status&240;if(kind<128||kind>224)throw new InvalidDataException("Evento MIDI no compatible.");int a=first>=0?first:r.ReadByte();int b=kind==192||kind==208?0:r.ReadByte();if(kind==144&&b>0){int instrument=a==35||a==36?0:a==38||a==40?1:a==42||a==44?2:a==46?3:a==39?4:a>=41&&a<=50&&a!=42&&a!=44&&a!=46&&a!=49?5:a==37?6:a==49||a==51||a==57?7:-1;if(instrument>=0&&(status&15)==9)hits.Add(new Hit{Tick=tick,Instrument=instrument});}}
+    r.BaseStream.Position=end;
+   }double ticksPerBar=division*result.Numerator*4.0/result.Denominator;foreach(Hit hit in hits)if(hit.Tick<ticksPerBar){int step=Math.Max(0,Math.Min(15,(int)Math.Round(hit.Tick/ticksPerBar*16)%16));result.Steps[step]|=(byte)(1<<hit.Instrument);result.NotesImported++;}}
+   if(result.NotesImported==0)throw new InvalidDataException("No hay notas de batería GM (canal 10) en el primer compás.");return result;
+  }
+ }
+}
